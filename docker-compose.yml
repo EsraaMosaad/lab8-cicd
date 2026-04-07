@@ -1,5 +1,4 @@
 services:
-
   mongo:
     image: mongo:7
     container_name: lab6-mongo
@@ -11,7 +10,7 @@ services:
 
   app:
     build: .
-    image: esraamosaad0111/lab6-app:latest   
+    image: esraamosaad0111/lab6-app:latest
     container_name: lab6-app
     ports:
       - "3000:3000"
@@ -20,3 +19,6 @@ services:
       MONGO_URI: mongodb://mongo:27017
     depends_on:
       - mongo
+
+volumes:
+  mongo-data:
